@@ -1015,8 +1015,8 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\/imgs\/bg-10\.jpg\'\)\] {
-  background-image: url('/imgs/bg-10.jpg');
+.bg-\[url\(\'imgs\/bg-10\.jpg\'\)\] {
+  background-image: url('imgs/bg-10.jpg');
 }
 
 .bg-gradient-to-br {
@@ -1031,12 +1031,16 @@ video {
   background-image: url('./imgs/bg-10.jpg');
 }
 
+.bg-\[url\(\'\/imgs\/bg-10\.jpg\'\)\] {
+  background-image: url('/imgs/bg-10.jpg');
+}
+
 .bg-\[url\(\'\.\.\/imgs\/bg-10\.jpg\'\)\] {
   background-image: url('../imgs/bg-10.jpg');
 }
 
-.bg-\[url\(\'\.\.\/\/imgs\/bg-10\.jpg\'\)\] {
-  background-image: url('..//imgs/bg-10.jpg');
+.bg-\[url\(\'\.\.\/\.\/imgs\/bg-10\.jpg\'\)\] {
+  background-image: url('.././imgs/bg-10.jpg');
 }
 
 .from-\[--main-color\] {
