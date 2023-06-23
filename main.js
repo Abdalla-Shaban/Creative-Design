@@ -1,8 +1,3 @@
-import Headroom from ".././node_modules/headroom.js/dist/headroom.js";
-let header = document.querySelector("header");
-let headRoom = new Headroom(header);
-headRoom.init();
-
 let fixdNav = document.querySelector(".fixed-nav");
 
 let bullets = document.querySelectorAll(".bullet");
@@ -198,3 +193,8 @@ function getCustomStorage(key, value) {
     );
   }
 }
+
+import Headroom from ".././node_modules/headroom.js/dist/headroom.js";
+let header = document.querySelector("header");
+let headRoom = new Headroom(header);
+headRoom.init();
