@@ -1043,6 +1043,38 @@ video {
   background-image: url('.././imgs/bg-10.jpg');
 }
 
+.bg-\[url\(\'\'\)\] {
+  background-image: url('');
+}
+
+.bg-\[url\(\'\.\.\/\'\)\] {
+  background-image: url('../');
+}
+
+.bg-\[url\(\'\.\.\/\.\/\'\)\] {
+  background-image: url('.././');
+}
+
+.bg-\[url\(\'\.\.\/\.\/imgs\'\)\] {
+  background-image: url('.././imgs');
+}
+
+.bg-\[url\(\'\.\.\/\.\/imgs\/\'\)\] {
+  background-image: url('.././imgs/');
+}
+
+.bg-\[url\(\'\.\.\/\.\/imgs\/bg-\'\)\] {
+  background-image: url('.././imgs/bg-');
+}
+
+.bg-\[url\(\'\.\.\/\.\/imgs\/bg-10\'\)\] {
+  background-image: url('.././imgs/bg-10');
+}
+
+.bg-\[url\(\'\.\.\/\.\/imgs\/bg-10\.\'\)\] {
+  background-image: url('.././imgs/bg-10.');
+}
+
 .from-\[--main-color\] {
   --tw-gradient-from: var(--main-color) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
