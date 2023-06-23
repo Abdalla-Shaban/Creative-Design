@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --main-color: #ff5722;
+    --main-bg-color: #ff5722;
+    --bg-overlay: #33333380;
+    --first-color: #cddc39;
+    --second-color: #e91e63;
+    --third-color: #9c27b0;
+    --fourth-color: #03a9f4;
+    --fifth-color: #009688;
+  }
+}
+

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Design</title>
+    <link rel="stylesheet" href="dist/all.min.css" />
+    <link rel="stylesheet" href="dist/style.css" />
+    <link rel="stylesheet" href="dist/tailwind.css" />
+  </head>
+  <body>
+    <main class="text-white">
+      <!-- Start Up Button -->
+      <div class="up-button">
+        <button
+          class="fixed text-2xl bg-slate-200 text-center w-16 h-16 rounded-full text-skin-main bottom-6 z-50 transition-all duration-500 -right-20"
+        >
+          <i class="fa-solid fa-angles-up fa-bounce"></i>
+        </button>
+      </div>
+      <!-- End Up Button -->
+      <!-- Start Setting Button -->
+      <span
+        class="setting-btn duration-300 fixed z-30 text-2xl top-80 md:top-60 cursor-pointer rounded-r-2xl w-12 p-2 bg-white text-center flex justify-center items-center shadow-xl left-0"
+      >
+        <i class="fa-solid fa-gear text-black"></i>
+      </span>
+      <!-- End Setting Button -->
+      <!-- Start Setting -->
+      <aside
+        class="setting duration-300 fixed z-30 bg-white w-80 min-h-full transition-all overflow-auto h-[400px] shadow-xl -left-80"
+      >
+        <div class="options text-black">
+          <div class="colors-list text-center p-3 border-b-2">
+            <h3 class="text-2xl font-semibold mb-3">Colors</h3>
+            <ul class="flex gap-3 justify-center">
+              <li
+                class="rounded-full w-7 h-7 cursor-pointer bg-orange-600"
+                data-color="#ff5722"
+              ></li>
+              <li
+                class="rounded-full w-7 h-7 cursor-pointer bg-skin-first"
+                data-color="#CDDC39"
+              ></li>
+              <li
+                class="rounded-full w-7 h-7 cursor-pointer bg-skin-second"
+                data-color="#e91e63"
+              ></li>
+              <li
+                class="rounded-full w-7 h-7 cursor-pointer bg-skin-third"
+                data-color="#9c27b0"
+              ></li>
+              <li
+                class="rounded-full w-7 h-7 cursor-pointer bg-skin-fourth"
+                data-color="#03a9f4"
+              ></li>
+              <li
+                class="rounded-full w-7 h-7 cursor-pointer bg-skin-fifth"
+                data-color="#009688"
+              ></li>
+            </ul>
+          </div>
+          <div class="randomBg-option text-center p-3 border-b-2">
+            <h4 class="text-2xl font-semibold mb-3 mt-4">Random Background</h4>
+            <div class="random-option flex justify-center gap-2">
+              <span
+                id="start"
+                class="bg-slate-950 text-white text-sm font-semibold inline-block w-14 p-2 rounded cursor-pointer select-none"
+                >Start</span
+              >
+              <span
+                id="stop"
+                class="bg-slate-950 text-white text-sm font-semibold inline-block w-14 p-2 rounded cursor-pointer select-none"
+                >Stop</span
+              >
+            </div>
+          </div>
+          <div class="bg-imgs text-center p-3 border-b-2">
+            <h4 class="text-2xl font-semibold mb-3">Select Background</h4>
+            <ul class="grid grid-cols-3 justify-center gap-2">
+              <li>
+                <img
+                  class="cursor-pointer bg-cover"
+                  src="imgs/bg-1.jpg"
+                  alt=""
+                  data-background="bg-1"
+                />
+              </li>
+              <li>
+                <img
+                  class="cursor-pointer bg-cover"
+                  src="imgs/bg-2.jpg"
+                  alt=""
+                  data-background="bg-2"
+                />
+              </li>
+              <li>
+                <img
+                  class="cursor-pointer bg-cover"
+                  src="imgs/bg-3.jpg"
+                  alt=""
+                  data-background="bg-3"
+                />
+              </li>
+              <li>
+                <img
+                  class="cursor-pointer bg-cover"
+                  src="imgs/bg-4.jpg"
+                  alt=""
+                  data-background="bg-4"
+                />
+              </li>
+              <li>
+                <img
+                  class="cursor-pointer bg-cover"
+                  src="imgs/bg-5.jpg"
+                  alt=""
+                  data-background="bg-5"
+                />
+              </li>
+              <li>
+                <img
+                  class="cursor-pointer bg-cover"
+                  src="imgs/bg-1.jpg"
+                  alt=""
+                  data-background="bg-1"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="nav-bullets text-center p-3 border-b-2">
+            <h4 class="text-2xl font-semibold mb-3 mt-4">Nav Bullets</h4>
+            <div class="nav-option flex justify-center gap-2">
+              <span
+                id="enable"
+                class="bg-slate-950 text-white text-sm font-semibold inline-block w-16 p-2 rounded cursor-pointer select-none"
+                >Enable</span
+              >
+              <span
+                id="disable"
+                class="bg-slate-950 text-white text-sm font-semibold inline-block w-16 p-2 rounded cursor-pointer select-none"
+                >Disable</span
+              >
+            </div>
+          </div>
+          <div class="reset-btn text-center p-3 border-b-2 pb-7 pt-7">
+            <span
+              class="bg-red-500 text-white text-xl font-semibold inline-block w-full p-2 rounded cursor-pointer select-none"
+            >
+              Reset Options
+            </span>
+          </div>
+        </div>
+      </aside>
+      <!-- End Setting -->
+      <!-- Start Nav Bullets -->
+      <div class="fixed-nav right-3 top-1/2 -translate-y-1/2 z-50 fixed">
+        <div
+          class="bullet group/item mb-2 cursor-pointer relative w-6 h-6 border-4 border-[--main-color] bg-transparent rounded-full"
+          data-bullet=".about-us"
+        >
+          <div
+            class="bullet-info group/edit invisible group-hover/item:visible font-semibold pointer-events-none cursor-default w-28 absolute right-8 -top-2 p-1 bg-skin-main text-center rounded before:content-[''] before:absolute before:w-0 before:h-0 before:border-4 before:border-transparent before:border-l-[--main-color] before:-right-2 before:top-1/2 before:-translate-y-1/2"
+          >
+            About Us
+          </div>
+        </div>
+        <div
+          data-bullet=".skills"
+          class="bullet group/item mb-2 cursor-pointer relative w-6 h-6 border-4 border-[--main-color] bg-transparent rounded-full"
+        >
+          <div
+            class="bullet-info group/edit invisible group-hover/item:visible font-semibold pointer-events-none cursor-default w-28 absolute right-8 -top-2 p-1 bg-skin-main text-center rounded before:content-[''] before:absolute before:w-0 before:h-0 before:border-4 before:border-transparent before:border-l-[--main-color] before:-right-2 before:top-1/2 before:-translate-y-1/2"
+          >
+            Our Skills
+          </div>
+        </div>
+        <div
+          data-bullet=".gallery"
+          class="bullet group/item mb-2 cursor-pointer relative w-6 h-6 border-4 border-[--main-color] bg-transparent rounded-full"
+        >
+          <div
+            class="bullet-info group/edit invisible group-hover/item:visible font-semibold pointer-events-none cursor-default w-28 absolute right-8 -top-2 p-1 bg-skin-main text-center rounded before:content-[''] before:absolute before:w-0 before:h-0 before:border-4 before:border-transparent before:border-l-[--main-color] before:-right-2 before:top-1/2 before:-translate-y-1/2"
+          >
+            Gallery
+          </div>
+        </div>
+        <div
+          data-bullet=".timeline"
+          class="bullet group/item mb-2 cursor-pointer relative w-6 h-6 border-4 border-[--main-color] bg-transparent rounded-full"
+        >
+          <div
+            class="bullet-info group/edit invisible group-hover/item:visible font-semibold pointer-events-none cursor-default w-28 absolute right-8 -top-2 p-1 bg-skin-main text-center rounded before:content-[''] before:absolute before:w-0 before:h-0 before:border-4 before:border-transparent before:border-l-[--main-color] before:-right-2 before:top-1/2 before:-translate-y-1/2"
+          >
+            Timeline
+          </div>
+        </div>
+        <div
+          data-bullet=".features"
+          class="bullet group/item mb-2 cursor-pointer relative w-6 h-6 border-4 border-[--main-color] bg-transparent rounded-full"
+        >
+          <div
+            class="bullet-info group/edit invisible group-hover/item:visible font-semibold pointer-events-none cursor-default w-28 absolute right-8 -top-2 p-1 bg-skin-main text-center rounded before:content-[''] before:absolute before:w-0 before:h-0 before:border-4 before:border-transparent before:border-l-[--main-color] before:-right-2 before:top-1/2 before:-translate-y-1/2"
+          >
+            Features
+          </div>
+        </div>
+        <div
+          data-bullet=".testimonials"
+          class="bullet group/item mb-2 cursor-pointer relative w-6 h-6 border-4 border-[--main-color] bg-transparent rounded-full"
+        >
+          <div
+            class="bullet-info group/edit invisible group-hover/item:visible font-semibold pointer-events-none cursor-default w-28 absolute right-8 -top-2 p-1 bg-skin-main text-center rounded before:content-[''] before:absolute before:w-0 before:h-0 before:border-4 before:border-transparent before:border-l-[--main-color] before:-right-2 before:top-1/2 before:-translate-y-1/2"
+          >
+            Testimonials
+          </div>
+        </div>
+        <div
+          data-bullet=".contact"
+          class="bullet group/item mb-2 cursor-pointer relative w-6 h-6 border-4 border-[--main-color] bg-transparent rounded-full"
+        >
+          <div
+            class="bullet-info group/edit invisible group-hover/item:visible font-semibold pointer-events-none cursor-default w-28 absolute right-8 -top-2 p-1 bg-skin-main text-center rounded before:content-[''] before:absolute before:w-0 before:h-0 before:border-4 before:border-transparent before:border-l-[--main-color] before:-right-2 before:top-1/2 before:-translate-y-1/2"
+          >
+            Contact Us
+          </div>
+        </div>
+      </div>
+      <!-- End Nav Bullets -->
+      <!-- Start Header -->
+      <header
+        class="flex justify-between items-center p-6 fixed top-0 left-0 w-full z-10 select-none bg-gradient-to-br from-[--main-color] to-stone-600"
+      >
+        <div class="logo text-3xl font-extrabold">LOGO</div>
+        <nav
+          class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 md:-translate-y-0 md:relative md:translate-x-0 md:left-0 w-full text-right md:w-fit md:mr-4"
+        >
+          <i
+            class="fa-solid fa-bars cursor-pointer text-2xl inline-block md:hidden pr-4"
+          ></i>
+          <i class="fa-solid fa-xmark cursor-pointer text-2xl pr-4 hidden"></i>
+          <ul
+            class="links text-center text-xl gap-5 md:text-left font-semibold md:flex absolute left-1/2 -translate-x-1/2 top-12 md:top-0 p-3 md:p-0 w-full bg-stone-800 bg-cover md:bg-transparent md:relative z-50 hidden"
+          >
+            <li class="group/item">
+              <a
+                href="#"
+                data-bullet=".landing"
+                class="transition-all group/edit border-[--main-color] group-hover/item:border-b-2 hover:text-skin-main block p-2 mx-auto w-1/2 md:p-0 md:border-none"
+                >Home</a
+              >
+            </li>
+            <li class="group/item">
+              <a
+                href="#"
+                data-bullet=".about-us"
+                class="transition-all group/edit border-[--main-color] group-hover/item:border-b-2 hover:text-skin-main block p-2 mx-auto w-1/2 md:p-0 md:border-none"
+                >About</a
+              >
+            </li>
+            <li class="group/item">
+              <a
+                href="#"
+                data-bullet=".skills"
+                class="transition-all group/edit border-[--main-color] group-hover/item:border-b-2 hover:text-skin-main block p-2 mx-auto w-1/2 md:p-0 md:border-none"
+                >Skills</a
+              >
+            </li>
+            <li class="group/item">
+              <a
+                href="#"
+                data-bullet=".gallery"
+                class="transition-all group/edit border-[--main-color] group-hover/item:border-b-2 hover:text-skin-main block p-2 mx-auto w-1/2 md:p-0 md:border-none"
+                >Gallery</a
+              >
+            </li>
+            <li class="group/item">
+              <a
+                href="#"
+                data-bullet=".timeline"
+                class="transition-all group/edit border-[--main-color] group-hover/item:border-b-2 hover:text-skin-main block p-2 mx-auto w-1/2 md:p-0 md:border-none"
+                >Timeline</a
+              >
+            </li>
+            <li class="group/item">
+              <a
+                href="#"
+                data-bullet=".features"
+                class="transition-all group/edit border-[--main-color] group-hover/item:border-b-2 hover:text-skin-main block p-2 mx-auto w-1/2 md:p-0 md:border-none"
+                >Features</a
+              >
+            </li>
+            <li class="group/item">
+              <a
+                href="#"
+                data-bullet=".contact"
+                class="transition-all group/edit border-[--main-color] group-hover/item:border-b-2 hover:text-skin-main block p-2 mx-auto w-1/2 md:p-0 md:border-none"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- End Header -->
+      <!-- Start Landing -->
+      <section
+        class="landing bg-[url('/imgs/bg-12.jpg')] min-h-screen relative bg-cover"
+      >
+        <div
+          class="overlay absolute w-full h-full left-0 top-0 bg-skin-overlay"
+        ></div>
+        <article
+          class="absolute text-center left-2/4 top-2/4 -translate-x-1/2 -translate-y-1/2"
+        >
+          <h1 class="text-2xl md:text-4xl font-semibold mb-2">
+            Welcome To
+            <span class="text-skin-main font-bold">Creative Design</span>
+          </h1>
+          <p class="text-xl md:text-3xl leading-snug">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt,
+            aspernatur.
+          </p>
+        </article>
+      </section>
+      <!-- End Landing -->
+      <!-- Start About -->
+      <section
+        class="about-us flex justify-center p-10 flex-col md:flex-row gap-3"
+      >
+        <article class="text-black flex-1 text-center lg:text-left">
+          <h2
+            class="text-skin-main text-2xl lg:text-left md:text-4xl font-bold mb-4 md:p-3"
+          >
+            About Us
+          </h2>
+          <p
+            class="text-sm font-semibold leading-7 md:text-xl md:leading-10 lg:w-3/4"
+          >
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo rem
+            aperiam repudiandae dolore sed pariatur beatae harum similique optio
+            sapiente at velit delectus reprehenderit, voluptatum repellendus
+            nulla illo quasi autem?
+          </p>
+        </article>
+        <div class="image flex-1">
+          <img
+            class="max-w-full mx-auto animate-up-down rounded-full"
+            src="/imgs/about.jpg"
+            alt=""
+          />
+        </div>
+      </section>
+      <!-- End About -->
+      <!-- Start Our Skills -->
+      <section class="skills mx-auto text-black p-20 pt-24 pb-24">
+        <h2
+          class="text-skin-main text-2xl text-center md:text-4xl font-bold mb-8 md:p-3"
+        >
+          Our Skills
+        </h2>
+        <div class="skills-container">
+          <div
+            class="skill-box flex md:items-center flex-col md:flex-row bg-slate-300 p-5 mb-3 rounded"
+          >
+            <span
+              class="font-semibold text-xl md:w-[88px] mb-4 md:mb-0 md:mr-5 text-center"
+              >HTML</span
+            >
+            <span
+              class="flex-1 relative p-4 before:content-['92%'] before:absolute before:-right-3 before:top-1/2 before:-translate-y-1/2 before:bg-white before:p-1 before:text-sm before:font-semibold before:rounded before:flex before:justify-center before:items-center"
+            >
+              <span
+                class="absolute w-0 h-full -left-4 md:left-0 top-0 bg-skin-main rounded transition-all duration-1000"
+                data-prog="92%"
+              ></span>
+            </span>
+          </div>
+          <div
+            class="skill-box flex md:items-center flex-col md:flex-row bg-slate-300 p-5 mb-3 rounded"
+          >
+            <span
+              class="font-semibold text-xl md:w-[88px] mb-4 md:mb-0 md:mr-5 text-center"
+              >CSS</span
+            >
+            <span
+              class="flex-1 relative p-4 before:content-['88%'] before:absolute before:-right-3 before:top-1/2 before:-translate-y-1/2 before:bg-white before:p-1 before:text-sm before:font-semibold before:rounded before:flex before:justify-center before:items-center"
+            >
+              <span
+                class="absolute w-0 h-full -left-4 md:left-0 top-0 bg-skin-main rounded transition-all duration-1000"
+                data-prog="88%"
+              ></span>
+            </span>
+          </div>
+          <div
+            class="skill-box flex md:items-center flex-col md:flex-row bg-slate-300 p-5 rounded"
+          >
+            <span
+              class="font-semibold text-xl md:w-[88px] mb-4 md:mb-0 md:mr-5 text-center"
+              >Javascript</span
+            >
+            <span
+              class="flex-1 prog-span relative p-4 before:content-['85%'] before:absolute before:-right-3 before:top-1/2 before:-translate-y-1/2 before:bg-white before:p-1 before:text-sm before:font-semibold before:rounded before:flex before:justify-center before:items-center"
+            >
+              <span
+                class="absolute w-0 h-full -left-4 md:left-0 top-0 bg-skin-main rounded transition-all duration-1000"
+                data-prog="85%"
+              ></span>
+            </span>
+          </div>
+        </div>
+      </section>
+      <!-- End Our Skills -->
+      <!-- Start Gallery -->
+      <section class="gallery text-black p-20 pt-24 pb-24">
+        <h2
+          class="text-skin-main text-2xl text-center md:text-4xl font-bold mb-8 md:p-3"
+        >
+          Our Gallery
+        </h2>
+        <div
+          class="gallery-container grid grid-cols-1 md:grid-cols-5 gap-3 bg-slate-300 p-3"
+        >
+          <img
+            class="p-2 cursor-pointer transition-all border-4 border-white"
+            src="/imgs/bg-1.jpg"
+            alt=""
+          />
+          <img
+            class="p-2 cursor-pointer transition-all border-4 border-white"
+            src="/imgs/bg-2.jpg"
+            alt=""
+          />
+          <img
+            class="p-2 cursor-pointer transition-all border-4 border-white"
+            src="/imgs/bg-3.jpg"
+            alt=""
+          />
+          <img
+            class="p-2 cursor-pointer transition-all border-4 border-white"
+            src="/imgs/bg-4.jpg"
+            alt=""
+          />
+          <img
+            class="p-2 cursor-pointer transition-all border-4 border-white"
+            src="/imgs/bg-5.jpg"
+            alt=""
+          />
+          <img
+            class="p-2 cursor-pointer transition-all border-4 border-white"
+            src="/imgs/bg-5.jpg"
+            alt=""
+          />
+          <img
+            class="p-2 cursor-pointer transition-all border-4 border-white"
+            src="/imgs/bg-4.jpg"
+            alt=""
+          />
+          <img
+            class="p-2 cursor-pointer transition-all border-4 border-white"
+            src="/imgs/bg-1.jpg"
+            alt=""
+          />
+          <img
+            class="p-2 cursor-pointer transition-all border-4 border-white"
+            src="/imgs/bg-12.jpg"
+            alt=""
+          />
+          <img
+            class="p-2 cursor-pointer transition-all border-4 border-white"
+            src="/imgs/bg-13.jpg"
+            alt=""
+          />
+        </div>
+      </section>
+      <!-- End Gallery -->
+      <!-- Strat Timeline -->
+      <section class="timeline mx-auto text-black p-20 pt-24 pb-24">
+        <h2
+          class="text-skin-main text-2xl text-center md:text-4xl font-bold mb-8 md:p-3"
+        >
+          Latest Events
+        </h2>
+        <div
+          class="timeline-container overflow-hidden bg-slate-300 p-5 relative before:content-[''] before:w-1 before:h-full before:absolute before:top-0 before:left-2/4 before:-translate-x-2/4 before:bg-skin-main"
+        >
+          <div
+            class="date absolute top-2 left-2/4 -translate-x-2/4 z-10 bg-skin-main p-1 rounded text-center font-bold text-sm text-white"
+          ></div>
+          <div
+            class="timeline-box md:float-left relative md:unset mb-5 mt-5 md:m-auto md:w-5/12 p-6 bg-white rounded"
+          >
+            <h3
+              class="font-bold text-skin-main mb-1 text-center md:text-left relative md:before:content-[''] md:before:absolute md:before:h-0 md:before:w-0 md:before:border-8 md:before:border-transparent md:before:border-l-white md:before:-right-10 md:before:top-6"
+            >
+              Heading
+            </h3>
+            <p
+              class="md:before:content-[''] md:before:absolute md:before:w-5 md:before:h-5 md:before:bg-skin-main md:before:rounded-full md:before:left-1/2 md:before:-translate-x-1/2 md:before:border-2 md:before:border-white"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dignissimos perspiciatis aliquam nostrum eius amet vitae inventore
+              sunt non labore id quasi explicabo minus nemo incidunt, ad dicta
+              tenetur, adipisci recusandae.
+            </p>
+          </div>
+          <div class="clear-both"></div>
+          <div
+            class="timeline-box md:float-right relative md:unset mb-5 mt-5 md:m-auto md:w-5/12 p-6 bg-white rounded"
+          >
+            <h3
+              class="font-bold text-skin-main mb-1 text-center md:text-left relative md:before:content-[''] md:before:absolute md:before:h-0 md:before:w-0 md:before:border-8 md:before:border-transparent md:before:border-r-white md:before:-left-10 md:before:top-7"
+            >
+              Heading
+            </h3>
+            <p
+              class="md:before:content-[''] md:before:absolute md:before:w-5 md:before:h-5 md:before:bg-skin-main md:before:rounded-full md:before:left-1/2 md:before:-translate-x-1/2 md:before:border-2 md:before:border-white"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dignissimos perspiciatis aliquam nostrum eius amet vitae inventore
+              sunt non labore id quasi explicabo minus nemo incidunt, ad dicta
+              tenetur, adipisci recusandae.
+            </p>
+          </div>
+          <div class="clear-both"></div>
+          <div
+            class="timeline-box md:float-left relative md:unset mb-5 mt-5 md:m-auto md:w-5/12 p-6 bg-white rounded"
+          >
+            <h3
+              class="font-bold text-skin-main mb-1 text-center md:text-left relative md:before:content-[''] md:before:absolute md:before:h-0 md:before:w-0 md:before:border-8 md:before:border-transparent md:before:border-l-white md:before:-right-10 md:before:top-7"
+            >
+              Heading
+            </h3>
+            <p
+              class="md:before:content-[''] md:before:absolute md:before:w-5 md:before:h-5 md:before:bg-skin-main md:before:rounded-full md:before:left-1/2 md:before:-translate-x-1/2 md:before:border-2 md:before:border-white"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dignissimos perspiciatis aliquam nostrum eius amet vitae inventore
+              sunt non labore id quasi explicabo minus nemo incidunt, ad dicta
+              tenetur, adipisci recusandae.
+            </p>
+          </div>
+          <div class="clear-both"></div>
+          <div
+            class="timeline-box md:float-right relative md:unset mb-5 mt-5 md:m-auto md:w-5/12 p-6 bg-white rounded"
+          >
+            <h3
+              class="font-bold text-skin-main mb-1 text-center md:text-left relative md:before:content-[''] md:before:absolute md:before:h-0 md:before:w-0 md:before:border-8 md:before:border-transparent md:before:border-r-white md:before:-left-10 md:before:top-7"
+            >
+              Heading
+            </h3>
+            <p
+              class="md:before:content-[''] md:before:absolute md:before:w-5 md:before:h-5 md:before:bg-skin-main md:before:rounded-full md:before:left-1/2 md:before:-translate-x-1/2 md:before:border-2 md:before:border-white"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dignissimos perspiciatis aliquam nostrum eius amet vitae inventore
+              sunt non labore id quasi explicabo minus nemo incidunt, ad dicta
+              tenetur, adipisci recusandae.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- End Timeline -->
+      <!-- Strat Our Features -->
+      <section class="features mx-auto text-black p-20 pt-24 pb-24">
+        <h2
+          class="text-skin-main text-2xl text-center md:text-4xl font-bold mb-8 md:p-3"
+        >
+          Our Features
+        </h2>
+        <div
+          class="features-container overflow-hidden grid grid-cols-1 md:grid-cols-3 p-5"
+        >
+          <div
+            class="feature flex flex-col items-center text-center p-4 gap-4 rounded"
+          >
+            <img
+              class="p-1 rounded-full w-24 h-24 mb-2 border-2 border-slate-300"
+              src="imgs/bg-1.jpg"
+              alt="Feature Pic"
+            />
+            <div class="feat-info mx-auto">
+              <h3
+                class="mx-auto text-xl mb-4 relative w-fit font-bold before:content-[''] before:absolute before:w-1/2 before:h-1 before:bg-skin-main before:top-8 before:left-1/2 before:-translate-x-1/2"
+              >
+                Feature
+              </h3>
+              <p class="text-gray-500 font-semibold md:w-2/3 mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum
+                possimus fuga animi, atque error officiis?
+              </p>
+            </div>
+          </div>
+          <div
+            class="feature flex flex-col items-center text-center p-4 gap-4 rounded"
+          >
+            <img
+              class="p-1 rounded-full w-24 h-24 mb-2 border-2 border-slate-300"
+              src="imgs/bg-4.jpg"
+              alt="Feature Pic"
+            />
+            <div class="feat-info mx-auto">
+              <h3
+                class="mx-auto text-xl mb-4 relative w-fit font-bold before:content-[''] before:absolute before:w-1/2 before:h-1 before:bg-skin-main before:top-8 before:left-1/2 before:-translate-x-1/2"
+              >
+                Feature
+              </h3>
+              <p class="text-gray-500 font-semibold md:w-2/3 mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum
+                possimus fuga animi, atque error officiis?
+              </p>
+            </div>
+          </div>
+          <div
+            class="feature flex flex-col items-center text-center p-4 gap-4 rounded"
+          >
+            <img
+              class="p-1 rounded-full w-24 h-24 mb-2 border-2 border-slate-300"
+              src="imgs/bg-2.jpg"
+              alt="Feature Pic"
+            />
+            <div class="feat-info mx-auto">
+              <h3
+                class="mx-auto text-xl mb-4 relative w-fit font-bold before:content-[''] before:absolute before:w-1/2 before:h-1 before:bg-skin-main before:top-8 before:left-1/2 before:-translate-x-1/2"
+              >
+                Feature
+              </h3>
+              <p class="text-gray-500 font-semibold md:w-2/3 mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum
+                possimus fuga animi, atque error officiis?
+              </p>
+            </div>
+          </div>
+          <div
+            class="feature flex flex-col items-center text-center p-4 gap-4 rounded"
+          >
+            <img
+              class="p-1 rounded-full w-24 h-24 mb-2 border-2 border-slate-300"
+              src="imgs/about.jpg"
+              alt="Feature Pic"
+            />
+            <div class="feat-info mx-auto">
+              <h3
+                class="mx-auto text-xl mb-4 relative w-fit font-bold before:content-[''] before:absolute before:w-1/2 before:h-1 before:bg-skin-main before:top-8 before:left-1/2 before:-translate-x-1/2"
+              >
+                Feature
+              </h3>
+              <p class="text-gray-500 font-semibold md:w-2/3 mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum
+                possimus fuga animi, atque error officiis?
+              </p>
+            </div>
+          </div>
+          <div
+            class="feature flex flex-col items-center text-center p-4 gap-4 rounded"
+          >
+            <img
+              class="p-1 rounded-full w-24 h-24 mb-2 border-2 border-slate-300"
+              src="imgs/bg-5.jpg"
+              alt="Feature Pic"
+            />
+            <div class="feat-info mx-auto">
+              <h3
+                class="mx-auto text-xl mb-4 relative w-fit font-bold before:content-[''] before:absolute before:w-1/2 before:h-1 before:bg-skin-main before:top-8 before:left-1/2 before:-translate-x-1/2"
+              >
+                Feature
+              </h3>
+              <p class="text-gray-500 font-semibold md:w-2/3 mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum
+                possimus fuga animi, atque error officiis?
+              </p>
+            </div>
+          </div>
+          <div
+            class="feature flex flex-col items-center text-center p-4 gap-4 rounded"
+          >
+            <img
+              class="p-1 rounded-full w-24 h-24 mb-2 border-2 border-slate-300"
+              src="imgs/bg-3.jpg"
+              alt="Feature Pic"
+            />
+            <div class="feat-info mx-auto">
+              <h3
+                class="mx-auto text-xl mb-4 relative w-fit font-bold before:content-[''] before:absolute before:w-1/2 before:h-1 before:bg-skin-main before:top-8 before:left-1/2 before:-translate-x-1/2"
+              >
+                Feature
+              </h3>
+              <p class="text-gray-500 font-semibold md:w-2/3 mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum
+                possimus fuga animi, atque error officiis?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Our Features -->
+      <!-- Strat Testmonials -->
+      <section
+        class="testimonials text-black p-20 pt-24 pb-24 bg-gradient-to-r from-[--main-color] from-50% to-stone-600 to-50%"
+      >
+        <h2
+          class="text-white text-2xl text-center md:text-4xl font-bold mb-8 md:p-3"
+        >
+          Testimonials
+        </h2>
+        <div
+          class="testmonials-container overflow-hidden grid grid-cols-1 md:grid-cols-3 gap-5 p-5"
+        >
+          <div class="testi-box bg-white rounded p-5 md:p-4 drop-shadow-lg">
+            <p
+              class="italic text-center md:text-left text-gray-600 font-semibold md:w-2/3 mx-auto pb-4"
+            >
+              iam very happy with the prouduct its amazing and i recieve it very
+              fast and the price was amazing.
+            </p>
+            <div
+              class="box-info flex items-center flex-col md:flex-row md:w-3/4 mx-auto"
+            >
+              <img
+                class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-cover"
+                src="imgs/bg-1.jpg"
+                alt="profile photo"
+              />
+              <div class="main-info flex-1 p-2 ml-2">
+                <h3 class="font-bold mb-1 text-sm lg:text-lg">
+                  Abdalla Shaban
+                </h3>
+                <p
+                  class="text-xs text-center md:text-left text-gray-600 font-semibold"
+                >
+                  CEO At Company
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="testi-box bg-white rounded p-5 md:p-4 drop-shadow-lg">
+            <p
+              class="italic text-center md:text-left text-gray-600 font-semibold md:w-2/3 mx-auto pb-4"
+            >
+              iam very happy with the prouduct its amazing and i recieve it very
+              fast and the price was amazing.
+            </p>
+            <div
+              class="box-info flex items-center flex-col md:flex-row md:w-3/4 mx-auto"
+            >
+              <img
+                class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-cover"
+                src="imgs/bg-1.jpg"
+                alt="profile photo"
+              />
+              <div class="main-info flex-1 p-2 ml-2">
+                <h3 class="font-bold mb-1 text-sm lg:text-lg">
+                  Abdalla Shaban
+                </h3>
+                <p
+                  class="text-xs text-center md:text-left text-gray-600 font-semibold"
+                >
+                  CEO At Company
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="testi-box bg-white rounded p-5 md:p-4 drop-shadow-lg">
+            <p
+              class="italic text-center md:text-left text-gray-600 font-semibold md:w-2/3 mx-auto pb-4"
+            >
+              iam very happy with the prouduct its amazing and i recieve it very
+              fast and the price was amazing.
+            </p>
+            <div
+              class="box-info flex items-center flex-col md:flex-row md:w-3/4 mx-auto"
+            >
+              <img
+                class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-cover"
+                src="imgs/bg-1.jpg"
+                alt="profile photo"
+              />
+              <div class="main-info flex-1 p-2 ml-2">
+                <h3 class="font-bold mb-1 text-sm lg:text-lg">
+                  Abdalla Shaban
+                </h3>
+                <p
+                  class="text-xs text-center md:text-left text-gray-600 font-semibold"
+                >
+                  CEO At Company
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Testmonials -->
+      <!-- Start Contact Us -->
+      <section class="contact text-black p-20 pt-24 pb-24 bg-stone-300">
+        <h2
+          class="text-skin-main text-2xl text-center md:text-4xl font-bold mb-8 md:p-3"
+        >
+          Contact Us
+        </h2>
+        <form class="flex flex-col md:flex-row gap-2 md:gap-8">
+          <div class="main-info basis-3/5 flex flex-col transition-opacity">
+            <input
+              class="p-3 mb-2 outline-none font-semibold focus:placeholder:opacity-0 border-gray-500 border-[1px]"
+              type="text"
+              placeholder="Your Name"
+            />
+            <input
+              class="p-3 mb-2 outline-none font-semibold focus:placeholder:opacity-0 border-gray-500 border-[1px]"
+              type="text"
+              placeholder="Your Phone"
+            />
+            <input
+              class="p-3 mb-2 outline-none font-semibold focus:placeholder:opacity-0 border-gray-500 border-[1px]"
+              type="email"
+              placeholder="Your Email"
+            />
+            <input
+              class="p-3 outline-none font-semibold focus:placeholder:opacity-0 border-gray-500 border-[1px]"
+              type="text"
+              placeholder="Your Subject"
+            />
+          </div>
+          <div class="final-info flex-1 flex flex-col">
+            <textarea
+              class="resize-none p-3 mb-2 outline-none font-semibold w-full h-[150px] md:h-3/4 focus:placeholder:opacity-0 border-gray-500 border-[1px]"
+              placeholder="Your Message"
+            ></textarea>
+            <input
+              class="w-full p-3 cursor-pointer bg-skin-main font-semibold text-white text-center border-[1px] border-[--main-color]"
+              type="text"
+              value="Send"
+            />
+          </div>
+        </form>
+      </section>
+      <!-- End Contact Us -->
+      <!-- Start Footer -->
+      <footer class="p-6 bg-stone-700 text-center text-lg font-bold">
+        Created With❤ By Abdalla Shaban
+      </footer>
+      <!-- End Footer -->
+    </main>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
