@@ -26,11 +26,11 @@ window.onscroll = () => {
     skillsProg();
   }
   if (window.scrollY >= 1100) {
-    upButton.classList.remove("-right-20");
-    upButton.classList.add("right-5");
+    upButton.classList.remove("-bottom-16");
+    upButton.classList.add("bottom-6");
   } else {
-    upButton.classList.remove("right-5");
-    upButton.classList.add("-right-20");
+    upButton.classList.add("-bottom-16");
+    upButton.classList.remove("bottom-6");
   }
 };
 
@@ -80,11 +80,17 @@ stopBtn.addEventListener("click", (e) => {
 let settingBtn = document.querySelector(".setting-btn");
 let asideSetting = document.querySelector(".setting");
 settingBtn.addEventListener("click", (e) => {
-  settingBtn.classList.toggle("left-0");
-  settingBtn.classList.toggle("left-80");
   asideSetting.classList.toggle("left-0");
   asideSetting.classList.toggle("-left-80");
-  document.querySelector(".setting-btn i").classList.toggle("fa-spin");
+  let span = document.createElement("span");
+  span.style.cssText =
+    "display: flex; justify-content: center; align-items: center; width: 45px; height: 45px;  position: absolute; bottom: 35px; left: 50%; transform: translateX(-50%); font-size: 20px; font-weight: bold; border-radius: 50%; background-color: var(--main-bg-color); color: white; cursor: pointer;";
+  span.textContent = "X";
+  asideSetting.appendChild(span);
+  span.addEventListener("click", () => {
+    asideSetting.classList.toggle("left-0");
+    asideSetting.classList.toggle("-left-80");
+  });
 });
 
 let colorsList = document.querySelectorAll(".colors-list ul li");
